@@ -144,3 +144,34 @@ button:hover {
     height: 30%;
     font-size: x-large;
 }
+
+#nav-left a:hover {
+  transition: transform 0.2s ease;
+     background-color: #d4f168;
+     border-radius: 20%;
+     transform: translateX(5px);
+}
+
+
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.interests-list li {
+  background-color: #d4f168;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.interests-list li a {
+    text-decoration: none;
+  color: black;
+}

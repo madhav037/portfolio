@@ -145,6 +145,12 @@ aside a {
   transform: translateX(5px);
 }
 
+#nav-left a:hover {
+  transition: transform 0.2s ease;
+     background-color: #d4f168;
+     border-radius: 20%;
+     transform: translateX(5px);
+}
 #projects a {
   text-decoration: none;
   font-weight: 600;

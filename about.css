@@ -115,3 +115,10 @@ section h2 {
     height: 30%;
     font-size: x-large;
 }
+
+#nav-left a:hover {
+  transition: transform 0.2s ease;
+     background-color: #d4f168;
+     border-radius: 20%;
+     transform: translateX(5px);
+}
