@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Madhav Lehru</title>
     <link rel="stylesheet" href="about.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -29,18 +30,27 @@
             <p>
                 I'm Madhav Lehru, a passionate product designer and developer. I love creating intuitive digital
                 experiences with attention to detail and meaningful interactions. My mission is to bring thoughtful
-                design to life and solve real-world problems through creative tech. I am a skilled fullstack developer focused on backend systems. I thrive in collaborative settings and scalable solutions for complex challenges.
-                I use my expertise in programming and algorithms to create a robust backend systems. I am passionate about mission driven projects, striving to inovate technologically and deliver qunatifiable results.
+                design to life and solve real-world problems through creative tech. I am a skilled fullstack developer
+                focused on backend systems. I thrive in collaborative settings and scalable solutions for complex
+                challenges.
+                I use my expertise in programming and algorithms to create a robust backend systems. I am passionate
+                about mission driven projects, striving to inovate technologically and deliver qunatifiable results.
             </p>
         </section>
-
         <section class="education">
             <h2>Education</h2>
             <ul>
-                <li><strong>B.Tech in Computer Science</strong> — Darshan University (2022 - 2026) - CPI <strong>8.69</strong></li>
-                <li><strong>High School</strong> — Shaki School (2020 - 2022) - PERCENTAGE <strong>67%</strong></li>
-                <li><strong>Priamary School</strong> — Masoom School (till 2020) - PERCENTAGE <strong>87.5%</strong></li>
+                <li><strong>B.Tech in Computer Science</strong> — Darshan University (2022 - 2026)</li>
+                <li><strong>High School</strong> — Shakti School (2020 - 2022)
+                </li>
+                <li><strong>Primary School</strong> — Masoom School (till 2020)
+                </li>
             </ul>
+
+            <!-- Chart container -->
+            <div class="chart-container">
+                <canvas id="eduChart" width="300" height="300"></canvas>
+            </div>
         </section>
 
         <section class="interests">
@@ -51,7 +61,71 @@
                 <li>Listening Music</li>
             </ul>
         </section>
+        <section class="skills">
+            <h2>Skills</h2>
+
+            <div class="skill">
+                <label>Python</label>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 90%;">9/10</div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <label>JavaScript</label>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 80%;">8/10</div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <label>Java</label>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 70%;">7/10</div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <label>C++</label>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 70%;">7.5/10</div>
+                </div>
+            </div>
+        </section>
+
     </div>
 </body>
 
 </html>
+
+<script>
+    const ctx = document.getElementById('eduChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['B.Tech (approx %)', 'High School', 'Primary School'],
+            datasets: [{
+                label: 'Education Percentages',
+                data: [86.9, 67, 87.5],
+                backgroundColor: ['#ffc74f', '#ffbe6d', '#ff961e'],
+                borderColor: '#fff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            return `${context.label}: ${context.parsed.toFixed(1)}%`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>

@@ -1,8 +1,9 @@
 body {
     background-color: wheat;
     padding: 0%;
-    margin: 0%;   
+    margin: 0%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeSlideIn 0.5s ease-in;
 }
 
 #nav-bar {
@@ -31,6 +32,10 @@ header {
     color: black;
 }
 
+img {
+    padding-right: 5px;
+}
+
 #nav-left {
     /* background-color: red; */
     display: flex;
@@ -46,33 +51,48 @@ header {
 
 main {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 120px); /* Adjust for header/footer height */
-  background: wheat;
-  padding: 0 2rem;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+    /* Adjust for header/footer height */
+    background: wheat;
+    padding: 0 2rem;
 }
 
-#intro {
+footer {
+    font-size: large;
+    padding-left: 10px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.intro {
     width: 50%;
-     text-align: center;
+    text-align: center;
 }
 
 #name {
-  font-size: 10rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+    font-size: 10rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 #name span {
-  display: block;
+    display: block;
 }
 
-#des {
-  font-size: 1.25rem;
-  color: #333;
+/* #des {
+    font-size: 1.25rem;
+    color: #333;
+} */
+.tagline {
+  font-size: 1.2rem;
+  color: #444;
+  margin-top: -1rem;
+  animation: fadeSlideIn 1s ease-in-out;
 }
+
 
 #text {
     top: 50%;
@@ -109,60 +129,188 @@ aside a {
 
 
 #projects {
-  background-color: wheat;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 280px;
-  position: absolute;
-  top: 50%;
-  right: 2rem;
-  transform: translateY(-50%);
-  font-family: 'Segoe UI', sans-serif;
+    background-color: wheat;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    font-family: 'Segoe UI', sans-serif;
 }
 
 #projects h3 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-  color: #444;
-  border-bottom: 2px solid #d4f168;
-  padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    color: #444;
+    border-bottom: 2px solid #f1db76;
+    padding-bottom: 0.5rem;
 }
 
 #projects ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #projects li {
-  margin-bottom: 1rem;
-  transition: transform 0.2s ease;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
 }
 
 #projects li:hover {
-  transform: translateX(5px);
+    transform: translateX(5px);
 }
 
 #nav-left a:hover {
-  transition: transform 0.2s ease;
-     background-color: #d4f168;
-     border-radius: 20%;
-     transform: translateX(5px);
+    transition: transform 0.2s ease;
+    background-color: #f1db76;
+    border-radius: 20%;
+    transform: translateX(5px);
 }
+
 #projects a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #222;
-  background-color: wheat;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  display: inline-block;
-  transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+    color: #222;
+    background-color: wheat;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #projects a:hover {
+    background-color: #f1db76;
+    color: #000;
+}
+
+.project-card {
+  background-color: #fff6c2;
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;       
+  margin: 0.75rem 0;
+  font-size: 0.85rem;         
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1); 
+  max-width: 300px;          
+}
+
+.project-card:hover {
+  background-color: #f1e290;
+  transform: translateY(-3px);
+}
+
+.project-card a {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
   background-color: #d4f168;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card a:hover {
+  background-color: #b7dc3e;
   color: #000;
+}
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    #nav-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #nav-right,
+    #nav-left {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+    #name {
+        font-size: 4rem;
+    }
+
+    #des {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 3rem 1rem;
+        gap: 2rem;
+    }
+
+    #projects {
+        position: static;
+        width: 100%;
+        transform: none;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    #projects ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to name text */
+#name {
+    font-size: 10rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    animation: fadeSlideIn 1s ease-out;
+}
+
+#name span {
+    display: block;
+    animation: fadeSlideIn 1.5s ease-out;
+}
+
+#name span {
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
 }
